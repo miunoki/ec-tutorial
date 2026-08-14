@@ -1,0 +1,16 @@
+{
+  "name": "rm-ec-tutorial",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RoboMaster 战队电控组新人教程 —— 从零开始的嵌入式开发与控制算法学习路线",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  }
+}

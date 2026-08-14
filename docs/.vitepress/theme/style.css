@@ -1,0 +1,379 @@
+/* ============================================================
+   rm-ec-tutorial 设计系统 —— DJI 科技蓝
+   主色     #0087ee / 亮蓝 #0091ff
+   深色底   #16191f / #212a35
+   点缀红   #c62127（RoboMaster 品牌红）
+   字体     系统栈 + 苹方 / 微软雅黑（避免 Google Fonts 被墙）
+   ============================================================ */
+
+:root {
+  /* 品牌色 */
+  --vp-c-brand-1: #0087ee;
+  --vp-c-brand-2: #2493e6;
+  --vp-c-brand-3: #0073d1;
+  --vp-c-brand-soft: rgba(0, 135, 238, 0.14);
+
+  /* 点缀色 */
+  --rm-accent: #c62127;
+
+  /* 字体（中文优先，无需外链字体） */
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', ui-monospace,
+    SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+.dark {
+  --vp-c-brand-1: #0091ff;
+  --vp-c-brand-2: #44a8f2;
+  --vp-c-brand-3: #0087ee;
+  --vp-c-brand-soft: rgba(0, 145, 255, 0.16);
+
+  /* 深海军蓝黑底 */
+  --vp-c-bg: #16191f;
+  --vp-c-bg-alt: #1a1f27;
+  --vp-c-bg-elv: #212a35;
+  --vp-c-bg-soft: #1a1f27;
+
+  --vp-c-text-1: #e6e8ea;
+  --vp-c-text-2: #b8bcc2;
+  --vp-c-text-3: #7d8288;
+
+  --vp-c-divider: #2a323d;
+  --vp-c-border: #2a323d;
+}
+
+/* ============================================================
+   基础
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 顶部导航：细描边 + 轻微毛玻璃 */
+.VPNav {
+  backdrop-filter: saturate(180%) blur(8px);
+}
+
+/* ============================================================
+   首页 Hero（科技感；浅色/深色主题自适配）
+   ============================================================ */
+
+/* hero 标题渐变 —— 用官方 CSS 变量，避免依赖内部 DOM 结构 */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #0073d1 0%, #0087ee 100%);
+}
+
+.dark {
+  --vp-home-hero-name-background: linear-gradient(120deg, #0091ff 0%, #6cc0ff 100%);
+}
+
+.VPHero {
+  padding-bottom: 64px;
+}
+
+/* 深色模式下给 hero 加上海军蓝底 + 蓝色光晕 */
+.dark .VPHero {
+  background:
+    radial-gradient(60% 80% at 20% 0%, rgba(0, 145, 255, 0.18), transparent 60%),
+    radial-gradient(50% 70% at 90% 20%, rgba(0, 135, 238, 0.12), transparent 60%),
+    linear-gradient(180deg, #16191f 0%, #0d1117 100%);
+}
+
+/* Hero 主按钮 */
+.VPHero .VPButton.brand {
+  background: linear-gradient(120deg, #0091ff, #0073d1);
+  border: none;
+}
+
+.VPHero .VPButton.brand:hover {
+  box-shadow: 0 8px 24px rgba(0, 145, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   特性卡片
+   ============================================================ */
+.VPFeature {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  border-color: var(--vp-c-brand-2);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.dark .VPFeature:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.VPFeature .icon {
+  font-size: 1.5em;
+}
+
+/* ============================================================
+   首页底部额外区块（HomeExtras 组件）
+   ============================================================ */
+.home-extras {
+  max-width: var(--vp-layout-max-width, 1152px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.rm-section {
+  padding: 48px 0;
+}
+
+.rm-section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rm-kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 12px;
+}
+
+.rm-section-title {
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--vp-c-text-1);
+}
+
+.rm-section-desc {
+  font-size: 16px;
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+
+/* 时间线 */
+.rm-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  counter-reset: none;
+}
+
+.rm-timeline-item {
+  position: relative;
+  padding: 24px 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-alt);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.rm-timeline-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--vp-c-brand-2);
+}
+
+.rm-timeline-num {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(120deg, #0091ff, #0073d1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+
+.rm-timeline-item h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--vp-c-text-1);
+}
+
+.rm-timeline-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+
+/* 数据统计 */
+.rm-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.rm-stat {
+  text-align: center;
+  padding: 32px 16px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, var(--vp-c-brand-soft), transparent 70%);
+}
+
+.rm-stat-num {
+  display: block;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--vp-c-brand-1);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.rm-stat-label {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+
+/* 号召行动 */
+.rm-cta {
+  text-align: center;
+  padding: 64px 24px;
+  margin-bottom: 48px;
+  border-radius: 16px;
+  background:
+    radial-gradient(60% 120% at 50% 0%, rgba(0, 145, 255, 0.22), transparent 70%),
+    linear-gradient(180deg, #16191f, #0d1117);
+}
+
+.rm-cta-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.rm-cta-desc {
+  font-size: 16px;
+  color: #b8bcc2;
+  margin: 0 0 28px;
+}
+
+.rm-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rm-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rm-btn:hover {
+  transform: translateY(-1px);
+}
+
+.rm-btn-primary {
+  background: linear-gradient(120deg, #0091ff, #0073d1);
+  color: #ffffff;
+}
+
+.rm-btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(0, 145, 255, 0.35);
+}
+
+.rm-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #e6e8ea;
+}
+
+.rm-btn-ghost:hover {
+  border-color: #0091ff;
+  color: #0091ff;
+}
+
+/* ============================================================
+   内容页通用组件
+   ============================================================ */
+
+/* 学习路径步骤卡（用于 guide/learning-path.md 等） */
+.rm-path-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.rm-path-step {
+  display: flex;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-alt);
+}
+
+.rm-path-step .num {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  background: linear-gradient(120deg, #0091ff, #0073d1);
+}
+
+.rm-path-step .body h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.rm-path-step .body p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+
+/* 状态徽标 */
+.rm-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+/* 响应式：小屏收窄 */
+@media (max-width: 768px) {
+  .rm-timeline,
+  .rm-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rm-section-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rm-timeline,
+  .rm-stats {
+    grid-template-columns: 1fr;
+  }
+}
