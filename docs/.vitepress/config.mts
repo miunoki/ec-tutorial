@@ -24,7 +24,6 @@ const sidebar = {
         { text: '技术革新', link: '/chapter1/tech-evolution' },
         { text: '赛制与规则更新', link: '/chapter1/rules-update' },
         { text: '电控组是做什么的', link: '/chapter1/ec-role' },
-        { text: '📝 第一章问卷', link: '/chapter1/quiz' },
       ],
     },
   ],

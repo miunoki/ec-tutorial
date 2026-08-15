@@ -36,8 +36,8 @@ features:
     link: /chapter4/
   - icon: 📝
     title: 问卷闯关
-    details: 每章末尾有问卷，通过后才解锁下一章
-    link: /chapter1/quiz
+    details: 第二章起，每章末尾有问卷，通过后解锁下一章
+    link: /chapter2/quiz
   - icon: 🤝
     title: 团队协作
     details: 一起维护这份教程，让它一届届传下去
