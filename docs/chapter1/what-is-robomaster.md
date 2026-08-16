@@ -132,12 +132,3 @@ RoboMaster 是由**大疆创新（DJI）**发起的、**全球首个射击对抗
 
 > 超级对抗赛的具体打法和兵种分工，见 [赛制与兵种](robots-and-rules)。
 
-## 参考资料
-
-- [RoboMaster 超级对抗赛往届回顾 - 官网](https://www.robomaster.com/zh-CN/robo/history)
-- [电子科大勇夺 RoboMasters2015 全国总冠军 - 电子科大新闻网](https://new1.uestc.edu.cn/?n=UestcNews.Front.DocumentV2.ArticlePage&Id=50760)
-- [RoboMaster 2019 决赛 无人机立奇功 助东北大学夺冠 - 5iMX](http://www.5imx.com/portal.php?mod=view&aid=2522)
-- [RoboMaster 2024 全国赛收官 上海交大夺冠 - 深圳晚报](https://m.dutenews.com/n/article/8345239?from=app&client=1&trace_id=55545289866847)
-- [RoboMaster 2025 超级对抗赛·全国赛收官 - 半岛网](http://tech.bandao.cn/a/1754290431555585.html)
-- [RMUC 2026 全国总决赛收官 东北大学夺冠 - 腾讯新闻](https://news.qq.com/rain/a/20260812V0DP6N00)
-- [机甲大师 - 维基百科](https://zh.wikipedia.org/wiki/%E6%A9%9F%E7%94%B2%E5%A4%A7%E5%B8%AB)

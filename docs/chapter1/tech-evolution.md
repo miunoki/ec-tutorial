@@ -39,8 +39,3 @@ RoboMaster 年年都在「逼」参赛队升级技术。看懂这几大技术革
 
 这些趋势，就是你接下来要学 C/C++、STM32、PID、云台控制的理由。
 
-## 参考资料
-
-- [机甲大师 - 维基百科](https://zh.wikipedia.org/wiki/%E6%A9%9F%E7%94%B2%E5%A4%A7%E5%B8%AB)
-- [RoboMaster 社区：RM2024 能量机关的识别与角度拟合](https://bbs.robomaster.com/article/371982)
-- [RoboMaster 2019 机甲大赛决赛 无人机立奇功 - 5iMX](http://www.5imx.com/portal.php?mod=view&aid=2522)

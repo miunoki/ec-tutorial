@@ -42,12 +42,3 @@
 
 对我们电控组来说，这意味着一件朴素的事：**基本功要扎实**。无论规则怎么变，「让底盘稳、让云台准、让系统实时」永远是底层能力 —— 这也正是后面几章要教你的东西。
 
-## 参考资料
-
-- [RoboMaster 2027 赛季规则亮点发布会 - 官方](https://www.bilibili.com/video/BV1hfgA6dErR/)
-- [RoboMaster 官网（赛事公告与规则手册）](https://www.robomaster.com/zh-CN/resource/announcement)
-- [RoboMaster 官方论坛](https://bbs.robomaster.com/)
-- [RoboMaster 2025 机甲大师高校系列赛比赛规范文件 - 官网](https://www.robomaster.com/zh-CN/resource/pages/announcement/1768)
-- [RoboMaster 2025 超级对抗赛比赛规则手册 V1.1.0（PDF）](https://terra-1-g.djicdn.com/b2a076471c6c4b72b574a977334d3e05/RoboMaster%202025%20%E6%9C%BA%E7%94%B2%E5%A4%A7%E5%B8%88%E8%B6%85%E7%BA%A7%E5%AF%B9%E6%8A%97%E8%B5%9B%E6%AF%94%E8%B5%9B%E8%A7%84%E5%88%99%E6%89%8B%E5%86%8CV1.1.0%EF%BC%8820241225%EF%BC%89.pdf)
-- [巅峰对决！RoboMaster 2026 机甲大师全国总决赛 - 央广网](https://tech.cnr.cn/techph/20260806/t20260806_527750784.shtml)
-- [2026 机甲大赛（南部赛区）收官 - 腾讯新闻](https://news.qq.com/rain/a/20260518A04ICX00)
