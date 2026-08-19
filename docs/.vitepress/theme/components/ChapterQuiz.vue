@@ -85,6 +85,72 @@ const QUIZZES: Record<number, QuizData> = {
       },
     ],
   },
+  2: {
+    title: '第二章 · 电控基础',
+    pass: 8,
+    questions: [
+      {
+        q: '电控组主要在 STM32 上用什么语言写代码？',
+        options: ['汇编', 'C 和 C++', 'Python', 'Java'],
+        answer: 1,
+        explain: '电控固件主要在 STM32 上用 C/C++ 编写：底层驱动多为 C，面向对象用 C++。',
+      },
+      {
+        q: '指针变量里存的是什么？',
+        options: ['变量的值', '内存地址', '变量的类型', '函数名'],
+        answer: 1,
+        explain: '指针存的是「内存地址」，通过 *p 可读写该地址上的数据。',
+      },
+      {
+        q: '硬件寄存器、或中断里会被修改的变量，应该加哪个关键词？',
+        options: ['const', 'static', 'volatile', 'extern'],
+        answer: 2,
+        explain: 'volatile 告诉编译器每次都真正读取内存，避免被优化掉。',
+      },
+      {
+        q: '位运算中，把某个二进制位「置 1」通常用哪个运算符？',
+        options: ['|=', '&&', '==', '<<'],
+        answer: 0,
+        explain: 'reg |= (1u << n) 把第 n 位置 1；清位则用 reg &= ~(1u << n)。',
+      },
+      {
+        q: 'C++ 中把「数据 + 操作数据的函数」封装在一起的结构叫什么？',
+        options: ['结构体 struct', '类 class', '枚举 enum', '联合体 union'],
+        answer: 1,
+        explain: '类是 C++ 面向对象的核心，把数据和成员函数封装在一起。',
+      },
+      {
+        q: '我们搭建 STM32 开发环境时，用哪个图形工具配置引脚、时钟和外设？',
+        options: ['STM32CubeMX', 'Keil', 'Visual Studio', 'Qt Creator'],
+        answer: 0,
+        explain: 'STM32CubeMX 负责选型、引脚/时钟/外设配置，并生成初始化代码和工程。',
+      },
+      {
+        q: '工具链中，负责「根据 CMakeLists.txt 组织编译」的是哪个工具？',
+        options: ['Ozone', 'CMake', 'Ninja', 'arm-none-eabi-gcc'],
+        answer: 1,
+        explain: 'CMake 读取 CMakeLists.txt 生成构建规则；arm-gcc 是编译器，Ninja 负责执行构建。',
+      },
+      {
+        q: '我们推荐用哪个调试器调试（可实时查看变量、显示波形）？',
+        options: ['SEGGER Ozone', '记事本', 'PuTTY', 'Excel'],
+        answer: 0,
+        explain: 'Ozone 是配 J-Link 的调试器，可实时监看变量、显示波形。',
+      },
+      {
+        q: 'Git 的核心作用是什么？',
+        options: ['版本控制', '图像处理', '即时通讯', '视频播放'],
+        answer: 0,
+        explain: 'Git 是分布式版本控制系统，核心能力就是版本控制：记录历史、支持回滚与协作。',
+      },
+      {
+        q: '队内 Git 提交信息遵循的格式是？',
+        options: ['<type>(<scope>): <subject>', '随便写即可', '日期-作者', '数字编号'],
+        answer: 0,
+        explain: '队内规范用 <type>(<scope>): <subject>，例如 feat(motor): 添加 M3508 控制。',
+      },
+    ],
+  },
 }
 
 const quiz = computed(() => QUIZZES[props.chapter])

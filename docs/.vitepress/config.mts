@@ -32,6 +32,9 @@ const sidebar = {
       text: '第二章 · 电控基础',
       items: [
         { text: '章节概览', link: '/chapter2/' },
+        { text: '第一部分 · C / C++ 基础', link: '/chapter2/cpp-basics' },
+        { text: '第二部分 · 纳新环境配置', link: '/chapter2/env-setup' },
+        { text: '第三部分 · Git 使用指南', link: '/chapter2/git-guide' },
         { text: '📝 第二章问卷', link: '/chapter2/quiz' },
       ],
     },
